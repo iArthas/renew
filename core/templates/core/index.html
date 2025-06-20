@@ -1,0 +1,77 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Renew{% endblock %}
+
+{% block content %}
+<section class="section1">
+  <div class="presentacion">
+    <div class="presentacionTexto">
+      <h1>Moda sostenible al alcance de todos</h1>
+      <h2>Compra y vende ropa de segunda mano de calidad. Dale una segunda oportunidad a la moda y cuida el planeta.</h2>
+    </div>
+    <div class="botonesPresentacion">
+      <a href="{% url 'productos' %}" class="boton boton1">Ver productos</a>
+      <a href="{% url 'vender' %}" class="boton boton1">Vender mi ropa</a>
+    </div>
+  </div>
+  <div class="hero">
+    <img class="imagehero" src="{% static 'img/hero2.webp' %}" alt="heroimg">
+  </div>
+</section>
+
+<section class="section2">
+  <div class="subtitulo">
+    <h3>Categorías</h3>
+  </div>
+  <div class="categorias">
+    <div class="categoria" data-categoria="Ropa">
+      <div class="contenedor_categoria">
+        <img src="{% static 'img/ropa.webp' %}" alt="Ropa" class="imageCategoria">
+        <h4>Ropa</h4>
+      </div>
+    </div>
+    <div class="categoria" data-categoria="Accesorios">
+      <div class="contenedor_categoria">
+        <img src="{% static 'img/accesorios.webp' %}" alt="Accesorios" class="imageCategoria">
+        <h4>Accesorios</h4>
+      </div>
+    </div>
+    <div class="categoria" data-categoria="Calzados">
+      <div class="contenedor_categoria">
+        <img src="{% static 'img/calzado.webp' %}" alt="Calzados" class="imageCategoria">
+        <h4>Calzados</h4>
+      </div>
+    </div>
+    <div class="categoria" data-categoria="Otros">
+      <div class="contenedor_categoria">
+        <img src="{% static 'img/alquiler.webp' %}" alt="Otros" class="imageCategoria">
+        <h4>Otros</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="subtitulo">
+    <h3>Productos recientes</h3>
+  </div>
+  <div class="productos" id="productos-recientes">
+    <!-- Productos cargados dinámicamente -->
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const categorias = document.querySelectorAll('.categoria');
+      categorias.forEach(categoria => {
+        categoria.addEventListener('click', () => {
+          const categoriaSeleccionada = categoria.dataset.categoria;
+          localStorage.setItem('categoriaFiltrada', categoriaSeleccionada);
+          window.location.href = "{% url 'productos' %}";
+        });
+      });
+    });
+  </script>
+  <script src="{% static 'js/productos_recientes.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,235 @@
+:root{
+    --color-principal: #6b8678;
+    --color-secundario: #e4e2dc;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    background-color: var(--color-secundario);
+    gap: 35rem;
+    width: 100%;
+    height: clamp(6rem,10vh, 10rem);
+    z-index: 1000;
+}
+
+.div1{
+    display: flex;
+    align-items: center;
+}	
+
+.marca{
+    font-family:'league spartan', verdana;
+    color: #6b8678;
+    font-size: 6rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav{
+    display: flex;
+    gap:6rem;
+}
+
+.div2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20rem;
+}
+
+.textonav{
+    color: black;
+    text-decoration: none;
+    font-size: clamp(1.5rem, 1.2vw, 2.5rem);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+
+.textonav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color:var(--color-principal);
+  transition: width 0.3s ease-in-out;
+}
+
+.textonav:hover::after {
+  width: 100%;
+}
+
+.textonav.activo{
+    color: #6b8678;
+}
+
+.textonav:hover{
+    color: #6b8678;
+    transition: 0.5s;
+}
+.botonesSesion{
+    display: flex;
+    flex-direction: row ;
+    gap: 2rem;
+}
+
+.button{
+    background-color: black;
+    color: var(--color-secundario);
+    border:solid black;
+    padding: 0.5rem;
+    font-size: clamp(1rem,1.5rem,2rem);
+    font-weight: 600;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover{
+    background-color: #6b8678;
+    border: solid #6b8678;
+    color: white;
+    transition: 0.5s;
+}
+
+.menu_button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2.5rem;       
+    height: 1.875rem;     
+    background-color: #333;
+    border-radius: 0.3125rem; 
+    padding: 0.3125rem;       
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+.menu_button span {
+    height: 0.1875rem;
+    width: 1.5625rem; 
+    background-color: white;
+    border-radius: 0.125rem;
+}
+
+.icono{
+    color: #6b8678;
+    width: 2.5rem;
+}
+
+.div3{
+    display: none;
+    flex-direction: row;
+    background-color: var(--color-secundario);
+    padding-top: clamp(6rem,10vh, 10rem);
+}
+
+.nav2{
+    background-color: var(--color-secundario);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem 5%;
+    position: fixed;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .header{
+        padding: 2rem;
+        justify-items: center;
+        gap: 2rem;
+    }
+
+    .marca{
+        font-size: 4rem;
+        letter-spacing: -0.5rem;
+    }
+
+    .div1{
+        gap: 5rem;
+    }
+
+    .div3{
+        display: flex;
+    }
+
+    .nav{
+        display: none;
+    }    
+
+    .botonesSesion{
+        gap: 1rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .header{
+        gap: 5rem;
+    }
+
+    .div2{
+        gap: 7rem;
+    }
+
+    .marca{
+        letter-spacing: -0.3rem;
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .header{
+        gap: 5rem;
+    }
+
+    .div2{
+        gap: 10rem;
+    }
+
+    .marca{
+        letter-spacing: -0.4rem;
+        font-size: 3.5rem;
+    }   
+}
+
+@media (min-width: 1440px) {
+    .header{
+        gap: 5rem;
+    }
+
+    .div2{
+        gap: 10rem;
+    }
+
+    .marca{
+        letter-spacing: -0.5rem;
+        font-size: 5rem;
+    } 
+}

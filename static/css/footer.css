@@ -1,0 +1,95 @@
+:root{
+    --color-principal: #6b8678;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior:smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+a.li{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}   
+
+a.li:hover{
+    color: white;
+    transition: ease-in-out 0.5s;
+}
+
+.div1footer{
+    background-color: var(--color-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap : 2rem;
+    position: relative;
+}
+
+.div2footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    gap: clamp(14rem, 5vw, 40rem);
+}
+
+.menu_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: clamp(1.5rem, 1.4vw, 3rem);
+}
+
+.div3footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.titulos_footer{
+    font-size: clamp(2rem, 2vw, 5rem);
+}
+
+.marca_footer{
+    font-size: clamp(3rem, 3vw, 5rem);
+    font-family:'league spartan', verdana;
+    color:white;
+    letter-spacing: clamp(-0.4rem, -1vw, -2rem);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .div1footer{
+        position: unset;
+    }
+    .div2footer{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .menu_footer{
+        padding-left: 1rem;
+    }
+}
+

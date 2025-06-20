@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Second Chance</title>
+  <meta name="theme-color" content="#6b8678">
+  <meta name="description" content="Aplicación para la compra, venta y alquiler de ropa de segunda mano.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/registrarse.css' %}">
+  <link rel="icon" href="{% static 'img/marca_renew.webp' %}" type="image/webp">
+</head>
+<body class="body">
+  <div class="contenedor">
+    <div class="marca">
+      <a href="{% url 'index' %}" class="marcatexto">renew</a>
+    </div>
+
+    <section class="section1">
+      <div class="div1">
+        <div class="div1_1">Crear cuenta</div>
+      </div>
+
+      <form class="form1" action="javascript:void(0)" method="post" id="RegisterForm">
+        {% csrf_token %}
+        <div class="div2">
+          <div class="div_nombres">
+            <div class="div2_2">
+              <div class="div2_1">
+                <label class="credenciales" for="nombres">Nombres</label>
+              </div>
+              <input class="entrada" placeholder="Nombres" type="text" id="nombres" required>
+            </div>
+            <div class="div2_2">
+              <div class="div2_1">
+                <label class="credenciales" for="apellidos">Apellidos</label>
+              </div>
+              <input class="entrada" placeholder="Apellidos" type="text" id="apellidos" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="direccion">Dirección</label>
+          </div>
+          <input class="entrada" type="text" id="direccion" placeholder="Ej. Av. Siempre Viva 123 "  autocomplete="street-address" required>
+        </div>
+
+        <div class="div2">
+          <div class="div_nombres">
+            <div class="div2_2">
+              <div class="div2_1">
+                <label class="credenciales" for="distrito">Distrito</label>
+              </div>
+              <select class="entrada" id="distrito" required>
+                <option value=""> Seleccionar</option>
+                <option value="Ancón">Ancón</option>
+                <option value="Ate">Ate</option>
+                <option value="Barranco">Barranco</option>
+                <option value="Breña">Breña</option>
+                <option value="Carabayllo">Carabayllo</option>
+                <option value="Chorrillos">Chorrillos</option>
+                <option value="Cieneguilla">Cieneguilla</option>
+                <option value="Comas">Comas</option>
+                <option value="El Agustino">El Agustino</option>
+                <option value="Independencia">Independencia</option>
+                <option value="Jesús María">Jesús María</option>
+                <option value="La Molina">La Molina</option>
+                <option value="La Victoria">La Victoria</option>
+                <option value="Lima">Lima</option>
+                <option value="Lince">Lince</option>
+                <option value="Los Olivos">Los Olivos</option>
+                <option value="Lurigancho">Lurigancho</option>
+                <option value="Lurín">Lurín</option>
+                <option value="Magdalena del Mar">Magdalena del Mar</option>
+                <option value="Miraflores">Miraflores</option>
+                <option value="Pueblo Libre">Pueblo Libre</option>
+                <option value="Puente Piedra">Puente Piedra</option>
+                <option value="Punta Hermosa">Punta Hermosa</option>
+                <option value="Punta Negra">Punta Negra</option>
+                <option value="Rímac">Rímac</option>
+                <option value="San Bartolo">San Bartolo</option>
+                <option value="San Borja">San Borja</option>
+                <option value="San Isidro">San Isidro</option>
+                <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+                <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+                <option value="San Luis">San Luis</option>
+                <option value="San Martín de Porres">San Martín de Porres</option>
+                <option value="San Miguel">San Miguel</option>
+                <option value="Santa Anita">Santa Anita</option>
+                <option value="Santa María del Mar">Santa María del Mar</option>
+                <option value="Santa Rosa">Santa Rosa</option>
+                <option value="Santiago de Surco">Santiago de Surco</option>
+                <option value="Surquillo">Surquillo</option>
+                <option value="Villa El Salvador">Villa El Salvador</option>
+                <option value="Villa María del Triunfo">Villa María del Triunfo</option>
+              </select>
+
+            </div>
+            <div class="div2_2">
+              <div class="div2_1">
+                <label class="credenciales" for="dni">DNI</label>
+              </div>
+              <input class="entrada" placeholder="Ingresa nº de DNI" type="text" inputmode="numeric" id="dni" minlength="8" maxlength="8" autocomplete="off" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="email">Email</label>
+          </div>
+          <input class="entrada" type="email" id="email" placeholder="Introduce tu correo" required>
+        </div>  
+
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="celular">Celular</label>
+          </div>
+          <input class="entrada" maxlength="9" minlength="9" type="tel" id="celular" placeholder="Ingresa tu número de celular" required pattern="^9\d{8}$" title="Debe comenzar con 9 y tener 9 dígitos">
+        </div>
+
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="password">Contraseña</label>
+          </div>
+          <input class="entrada" type="password" id="password" placeholder="Introduce tu contraseña" required>
+        </div>
+
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="valida_password">Valida tu contraseña</label>
+          </div>
+          <input class="entrada" type="password" id="valida_password" placeholder="Valida tu contraseña" required>
+        </div>
+
+        <div id="error-msg" style="color: red; margin-top: 10px;"></div>
+
+        <div class="div3">
+          <button class="botonIS" type="submit">Crear cuenta</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="{% static 'js/registrarse.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}Renew{% endblock %}</title>
+  <meta name="description" content="Aplicación para la compra, venta y alquiler de ropa de segunda mano.">
+  <meta name="theme-color" content="#6b8678">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token }}">  <!-- ✅ Añadido -->
+
+  <!-- CSS base (modular) -->
+  {% block css_base %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  {% endblock %}
+
+  <link rel="icon" href="{% static 'img/marca_renew.webp' %}" type="image/webp">
+
+  <!-- CSS adicional -->
+  {% block styles %}{% endblock %}
+</head>
+<body class="body">
+
+  {% include 'includes/header.html' %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% include 'includes/footer.html' %}
+
+  <script src="{% static 'js/sesion.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

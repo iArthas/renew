@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Renew - Detalles del Producto{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/detalles_producto.css' %}">
+{% endblock %}
+
+{% block content %}
+  <section class="producto_elegido" id="producto_elegido">
+    <div class="contenedor" id="contenedor">
+      <div class="contenedor_producto" id="contenedor_producto">
+        <div class="detalles_producto" id="detalles_producto">
+          <div class="foto_producto" id="foto_producto">
+            <img class="imagen_producto" id="imagen_producto" src="" alt="Imagen del producto">
+          </div>
+          <div class="info_producto" id="info_producto">
+            <div class="nombre_precio" id="nombre_precio">
+              <h2 id="nombre_producto">Nombre</h2>
+              <div class="precio" id="precio_producto">S/ 00.00</div>
+            </div>
+            <div class="datos_producto" id="datos_producto">
+              <div class="dato">
+                <span>Categoría</span>
+                <span class="agregado" id="categoria_producto"></span>
+              </div>
+              <div class="dato">
+                <span>Estado</span>
+                <span class="agregado" id="estado_producto"></span>
+              </div>
+              <div class="dato">
+                <span>Género</span>
+                <span class="agregado" id="genero_producto"></span>
+              </div>
+              <div class="dato">
+                <span>Vendedor</span>
+                <span class="agregado" id="nombre_vendedor"></span>
+              </div>
+            </div>
+            <div id="descripcion_producto_div">
+              <h3>Descripción</h3>
+              <p id="descripcion_producto"></p>
+            </div>
+            <button type="submit" id="boton_comprar">¡Lo compro!</button>
+          </div>
+        </div>
+        <div class="detalles_producto">
+          <div class="galeria_secundaria" id="imagenes_secundarias"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/detalles_producto.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Renew</title>
+    <meta name="theme-color" content="#6b8678">
+    <meta name="description" content="Aplicación para la compra, venta y alquiler de ropa de segunda mano.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/pasarela_pago.css' %}">
+    <link rel="icon" href="{% static 'img/marca_renew.webp' %}" type="image/webp">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Pago</h2>
+
+    <div class="form-group">
+      <label for="numero">Número de tarjeta</label>
+      <input type="text" id="numero" placeholder="1234 5678 9012 3456" maxlength="19">
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre en la tarjeta</label>
+      <input type="text" id="nombre" placeholder="Juan Pérez">
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha de expiración</label>
+      <input type="text" id="fecha" placeholder="MM/AA" maxlength="5">
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input type="password" id="cvv" placeholder="123" maxlength="4">
+    </div>
+
+    <button id="boton_pagar" class="btn-pagar">Pagar</button>
+
+    <div class="mensaje" id="mensaje"></div>
+
+    <!-- Sección para Yape -->
+    <div class="yape-section">
+      <h3>O paga con Yape</h3>
+      <div class="qr-container">
+        <img src="{% static 'img/codigoqr.jpg' %}" alt="Código QR de Yape" class="qr-image">
+      </div>
+      <div class="form-group">
+        <label for="codigo_yape">Código de validación</label>
+        <input type="text" id="codigo_yape" placeholder="Ingresa el código que aparece al pagar">
+      </div>
+      <button id="validar_yape" class="btn-validar">Validar Código</button>
+    </div>
+  </div>
+
+  <script src="{% static 'js/pasarela_pago.js' %}"></script>
+</body>
+</html>

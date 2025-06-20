@@ -1,0 +1,352 @@
+:root {
+  --color-principal: #6b8678;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(202, 202, 202);
+  color: #000;
+  min-height: 100vh;
+}
+
+.swal2-confirm {
+  text-align: center !important;
+}
+
+.swal2-confirm {
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100px; /* Ajusta el ancho si quieres */
+  text-align: center;
+}
+
+
+.navperfil{
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+a.a1{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size:clamp(2rem, 2vw, 4rem);
+  text-align: center;
+}
+
+a.a2{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size:clamp(2rem, 2vw, 4rem);
+  text-align: center;
+}
+
+a.a2{
+  font-size: clamp(1.5rem, 1.2vw, 2.5rem);
+  font-weight:300;
+}
+
+a.a2:hover{
+  color: var(--color-principal);
+  font-weight: 700;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(4rem, 10vh, 10rem) 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.formulario_perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 120rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formularios {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 120rem;
+  min-width: 30rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: clamp(1rem,2rem,4rem);
+}
+
+.formulario_perfil h3 {
+  font-size: 4rem;
+  text-align: left;
+}
+
+.form_perfil p {
+  color: var(--color-principal);
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.grupos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+label {
+  color: var(--color-principal);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+button {
+  width: 50%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+button {
+  background-color: var(--color-principal);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #576e60;
+}
+
+.opciones{
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.productos {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.lista_productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    grid-gap: 1rem;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-style: solid;
+    border-color: var(--color-principal);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.prenda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: clamp(20rem, 20vh, 40rem);
+    aspect-ratio: 0.9;
+}
+
+.info_prenda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.precio_prenda{
+    display: flex;
+    flex-direction: row;
+    gap: clamp(2rem, 2.2vw, 5rem);
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    text-align: center;
+    align-items: center;
+}
+
+.boton_agregar{
+    border: solid;
+    border-radius: 1rem;
+    border-color: var(--color-principal);
+    padding: 1.5rem 3rem;
+    font-size: clamp(2rem,2vh,5rem);
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.boton_agregar:hover{
+    border-color: black;
+    background-color: var(--color-principal);
+    transition: ease all 0.3s;
+}
+
+.imageprenda{
+    width: clamp(70%, 100%, 90%);
+    height: clamp(18rem, 20vh, 30rem);
+}
+
+.imageprenda:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.text_boton_agregar{
+    padding: .5rem;
+    color: black;
+    font-size: clamp(1.5rem, 2vh, 2.5rem);
+}
+
+.vendedor{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  .formulario_perfil_nav{
+    display: none;
+  }
+
+  .formularios{
+    padding: 1rem;
+  }
+
+  .formulario_producto {
+    padding: 2rem;
+  }
+
+  .grupos{
+    align-items: flex-start;
+  }
+
+  .formulario_perfil h3{
+    font-size: 2rem;
+  }
+
+  .formulario_perfil{
+    font-size: 1.5rem;
+  }
+
+  input,
+  select,
+  button {
+    width: 90%;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+  }
+
+  .lista_productos{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .producto{
+    width: 90%;
+  }
+
+  .precio_prenda{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+   .lista_productos{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .formulario_producto {
+    max-width: 70rem;
+    padding: 5rem;
+  }
+
+  .formulario_producto h3 {
+    font-size: 2.6rem;
+  }
+
+  .formulario_producto p {
+    font-size: 1.7rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .formulario_producto {
+    max-width: 80rem;
+    padding: 5rem 6rem;
+  }
+
+  .formulario_producto h3 {
+    font-size: 2.8rem;
+  }
+
+  .formulario_producto p {
+    font-size: 1.8rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.6rem;
+    padding: 1.4rem;
+  }
+}

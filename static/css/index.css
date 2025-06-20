@@ -1,0 +1,347 @@
+:root{
+    --color-principal: #6b8678;
+    --color-secundario: #e4e2dc;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior:smooth;
+}
+
+h1{
+    font-size: clamp(4rem, 5vw, 10rem);
+    font-weight: 600;
+    color: white;
+    animation: fadeinup 1s ease-in-out;
+}
+
+h2{
+    font-size: clamp(2rem, 2vw, 5rem);
+    font-weight: 200;
+    animation: fadeinup 1s ease-in-out;
+}
+
+h3{
+    color: black;
+    font-size: clamp(2rem, 2vw, 4rem);
+    text-align: left;
+}
+
+h4{
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-weight: 200;
+    color: black;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--color-principal)
+}
+
+.section1{
+    background-color: var(--color-principal);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5%;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.presentacion{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.presentacionTexto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.botonesPresentacion{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 5rem);
+}
+
+.boton{
+    background-color: black;
+    border: none;
+    border-radius: 5rem;
+    padding: 1.5rem 3rem;
+    font-size: clamp(2rem,3vh,5rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: inline-block;
+    animation: bounce 1.5s;
+}
+
+@keyframes bounce{
+    0%,100%{
+        opacity: 1;
+        transform: translateX();
+    }
+
+    50%{
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+}
+
+.boton:hover{
+    font-size: clamp(1.5rem, 2.5vh, 4.5rem);
+}
+
+.boton1{
+    color: white;
+}
+
+.hero{
+    background-color: var(--color-principal);
+    width: 100%;
+    height: 90%;
+    aspect-ratio: 509/609;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagehero{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: fadeinup 1s ease-in-out;
+    border: blue;
+}
+
+@keyframes fadeinup {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5%;
+    gap: 3rem;
+}
+
+.subtitulo{
+    width: 100%;
+    font-size: clamp(2rem, 2vw, 5rem);
+    font-weight: 200;
+    align-items: flex-start;
+}
+
+.categorias{
+    width: 100%;
+    display: grid;   
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.categoria{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+.categoria:hover{
+    background-color: var(--color-principal);
+    transition: all 0.3s ease-in-out;
+    border-color: black;
+    transform: translateY(-15px);
+}
+
+.contenedor_categoria {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.imageCategoria{
+    max-width: 40%;
+}
+
+.productos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 3rem;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-style: solid;
+    border-color: var(--color-principal);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.prenda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: clamp(20rem, 20vh, 40rem);
+    aspect-ratio: 0.9;
+    cursor: pointer;
+}
+
+.prenda:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.imageprenda{
+    width: clamp(70%, 100%, 90%);
+    height: clamp(18rem, 20vh, 30rem);
+}
+
+.info_prenda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.precio_prenda{
+    display: flex;
+    flex-direction: row;
+    gap: clamp(2rem, 2.2vw, 5rem);
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    text-align: center;
+    align-items: center;
+}
+
+.boton_agregar{
+    border: solid;
+    border-radius: 1rem;
+    border-color: var(--color-principal);
+    padding: 1.5rem 3rem;
+    font-size: clamp(2rem,2vh,5rem);
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #e1f5e1;
+}
+
+.boton_agregar:hover{
+    border-color: black;
+    background-color: var(--color-principal);
+    transition: ease all 0.3s;
+}
+
+.text_boton_agregar{
+    padding: .5rem;
+    color: black;
+    font-size: clamp(1.5rem, 2vh, 2.5rem);
+    font-weight: 800;
+}
+
+
+.vendedor{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .section1{
+        height: 100vh;
+    }
+
+
+    .hero{
+        display: none;
+    }
+
+    .categorias{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .productos{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .botonesPresentacion{
+        flex-direction: column;
+    }
+
+    .boton{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+    .productos{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .section1{
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+{% load static %}
+
+
+<header class="header">
+  <div class="div1">
+    <a href="{% url 'index' %}" class="marca">renew</a>
+  </div>
+
+  <div class="div2" id="menu">
+    <nav class="nav">
+      <a class="textonav" href="{% url 'index' %}">Inicio</a>
+      <a class="textonav" href="{% url 'productos' %}">Productos</a>
+      <a class="textonav" href="{% url 'vender' %}">Vender</a>
+    </nav>
+
+    <div class="botonesSesion" id="botonesSesion" data-login-url="{% url 'iniciar_sesion' %}">
+    </div>
+
+
+  </div>
+</header>
+
+<div class="div3">
+  <nav class="nav2">
+    <a class="textonav" href="{% url 'index' %}">Inicio</a>
+    <a class="textonav" href="{% url 'productos' %}">Productos</a>
+    <a class="textonav" href="{% url 'vender' %}">Vender</a>
+  </nav>
+</div>

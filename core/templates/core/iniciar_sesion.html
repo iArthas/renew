@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Renew - Iniciar Sesión</title>
+  <meta name="theme-color" content="#6b8678">
+  <meta name="description" content="Aplicación para la compra, venta y alquiler de ropa de segunda mano.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/iniciar_sesion.css' %}">
+  <link rel="icon" href="{% static 'img/marca_renew.webp' %}" type="image/webp">  
+</head>
+<body class="body">
+  <div class="contenedor">
+    <div class="marca">
+      <a href="{% url 'index' %}" class="marcatexto">renew</a>
+    </div>
+    <section class="section1">
+      <div class="div1">
+        <div class="div1_1">INICIAR SESIÓN</div>
+        <div class="div1_2">Ingresa tus credenciales para acceder a tu cuenta</div>
+      </div>
+      <form class="form1" id="loginform">
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="email">Email</label>
+          </div>
+          <input class="entrada" type="email" id="email" placeholder="Introduce tu email" required>
+        </div>
+        <div class="div2">
+          <div class="div2_1">
+            <label class="credenciales" for="password">Contraseña</label>
+            <a class="credenciales" href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          <input class="entrada" type="password" id="password" placeholder="Introduce tu contraseña" required>
+        </div>
+        <div id="error" style="color: red; font-size: 0.9rem; margin-top: 0.5rem;"></div>
+        <div class="div3">
+          <button class="botonIS" type="submit">Iniciar Sesión</button>
+          <a class="credenciales" href="{% url 'registrarse' %}">Registrarse</a>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src="{% static 'js/inicio_sesión.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

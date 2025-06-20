@@ -1,0 +1,152 @@
+:root {
+  --color-principal: #6b8678;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(202, 202, 202);
+  color: #000;
+  min-height: 100vh;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(4rem, 10vh, 10rem) 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.formulario_producto {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 60rem;
+  min-width: 30rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario_producto h3 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.formulario_producto p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.grupos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+button {
+  background-color: var(--color-principal);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #576e60;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  .formulario_producto {
+    padding: 2rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .formulario_producto {
+    max-width: 70rem;
+    padding: 5rem;
+  }
+
+  .formulario_producto h3 {
+    font-size: 2.6rem;
+  }
+
+  .formulario_producto p {
+    font-size: 1.7rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .formulario_producto {
+    max-width: 80rem;
+    padding: 5rem 6rem;
+  }
+
+  .formulario_producto h3 {
+    font-size: 2.8rem;
+  }
+
+  .formulario_producto p {
+    font-size: 1.8rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.6rem;
+    padding: 1.4rem;
+  }
+}

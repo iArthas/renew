@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Renew - Vender{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/vender.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="contenedor">
+  <div class="formulario_producto">
+    <h3>Vender un artículo</h3>
+    <p>Completa el formulario a continuación. Tu artículo será revisado antes de publicarse.</p>
+
+    <form id="formProducto" method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+
+      <div class="grupos">
+        <label for="nombre">Nombre del artículo</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="grupos">
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Elegir una opción</option>
+          <option value="Ropa">Ropa</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Calzados">Calzados</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+
+      <div class="grupos">
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" required>
+          <option value="">Elegir una opción</option>
+          <option value="Como nuevo">Como nuevo</option>
+          <option value="Buen estado">Buen estado</option>
+          <option value="Usado">Usado</option>
+        </select>
+      </div>
+
+      <div class="grupos">
+        <label for="genero">Género</label>
+        <select id="genero" name="genero" required>
+          <option value="">Elegir una opción</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+          <option value="Unisex">Unisex</option>
+        </select>
+      </div>
+
+      <div class="grupos">
+        <label for="precio">Precio (S/)</label>
+        <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+      </div>
+
+      <div class="grupos">
+        <label for="descripcion">Descripción del Producto (Procura especificar medidas/talla y marca)</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required style="resize: none;"></textarea>
+      </div>
+
+      <div class="grupos">
+        <label for="imagen">Foto principal (solo 1 imagen)</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required>
+      </div>
+
+      <div class="grupos">
+        <label for="imagen_2">Fotos secundarias (3 imágenes en diferentes ángulos)</label>
+        <input type="file" id="imagen_2" name="imagenesSecundarias[]" accept="image/*" multiple required>
+        <p id="imagen_2_error" style="color: red; font-size: 1.2rem;"></p>
+      </div>
+
+      <button type="submit">Agregar prenda</button>
+    </form>
+  </div>
+</section>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'js/sesion_iniciada_vender.js' %}"></script>
+<script src="{% static 'js/nuevo_producto.js' %}" defer></script>
+{% endblock %}
